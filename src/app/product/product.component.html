@@ -1,0 +1,27 @@
+<div class="contenedor">
+    <input
+      type="text"
+      [(ngModel)]="filtro"
+      (input)="buscar()"
+      placeholder="Buscar producto por nombre"
+      class="input-filtro"
+    />
+  
+    <table class="tabla" *ngIf="productos.length > 0">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Categoría</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of productos">
+          <td>{{ p.productName }}</td>
+          <td>{{ p.categoria }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <p *ngIf="filtro && productos.length === 0">No se encontraron productos.</p>
+  </div>
+  
