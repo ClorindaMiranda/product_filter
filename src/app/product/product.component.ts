@@ -5,7 +5,7 @@ import { ProductServiceService , Producto} from '../product-service.service';
   selector: 'app-product',
   standalone: false,
   templateUrl: './product.component.html',
-  styleUrl: './product.component.css'
+  styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
   filtro: string = '';
@@ -19,7 +19,7 @@ export class ProductComponent {
       return;
     }
 
-    this.productoService.findByProductName(this.filtro).subscribe(data => {
+      this.productoService.findByProductName(this.filtro).subscribe(data => {
       this.productos = data;
     });
   }
